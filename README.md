@@ -29,25 +29,38 @@ For every input file `foo` provided, the assembler generates:
 
 ## How to Build & Run
 
-### Requirements
-- GCC compiler
-- `make`
+> **Requirements:** GCC and `make` must be installed.
+> On Ubuntu/Debian: `sudo apt install gcc make`
 
-### Build
+**Step 1 — Clone the repo**
+```bash
+git clone https://github.com/tomerzi/asemblerAsembly.git
+cd asemblerAsembly
+```
+
+**Step 2 — Build**
 ```bash
 make
 ```
 
-### Run
-```bash
-./main file1 file2 ...
-```
-
-Pass one or more assembly source file names (without extension) as arguments. Example:
+**Step 3 — Run on your assembly file**
 ```bash
 ./main test
 ```
-This reads `test` as the source and produces `test.am`, `test.ob`, `test.ent`, `test.ext`.
+
+> Replace `test` with the name of your assembly source file (no extension needed).
+> You can pass multiple files at once: `./main file1 file2 file3`
+
+**What you get after running:**
+
+| File | What it contains |
+|------|-----------------|
+| `test.am` | Your source after macro expansion |
+| `test.ob` | The binary machine code |
+| `test.ent` | Entry label addresses |
+| `test.ext` | External label references |
+
+> If your file has errors, the assembler will print them and skip generating output files.
 
 ---
 
