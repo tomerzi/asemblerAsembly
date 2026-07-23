@@ -144,23 +144,25 @@ Each instruction is encoded as a 12-bit word:
 ### Successful Assembly — All Output Files
 Running `./main test` on a valid source file produces all four output files:
 
-![Output files example](images/output_example1.png)
+![Output files example](צילומי%20מסך/פלט1.png)
 
 From left to right: the original source, the expanded `.am` file, the `.ent` entries file, the `.ext` externals file, and the `.ob` object file with encoded binary words.
 
 ---
 
-### Expanded Source (.am file)
-After macro expansion, the `.am` file contains the clean, processed assembly:
+### Input Source File
+The original assembly source passed to the assembler:
 
-![Expanded source](images/output_example2.png)
+![Input source](צילומי%20מסך/קלט1.png)
 
 ---
 
 ### Error Detection
 When the input contains mistakes (wrong number of arguments, invalid operands, etc.), the assembler prints clear error messages and produces **no output files**:
 
-![Error detection](images/output_example3.png)
+![Error detection](צילומי%20מסך/תמונה2.png)
+
+![Error detection 2](צילומי%20מסך/תמונה3.png)
 
 ---
 
