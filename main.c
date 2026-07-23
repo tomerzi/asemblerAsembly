@@ -2,6 +2,7 @@
 This program is responsible for reading Assembly files, performing checks, and printing output files with specific extensions like .am, .ext, .ent, and .ob. The program consists of pre-assembly processing, error checking, two passes through the file, and cleaning up resources.*/
 
 #include "main.h"
+char am_file[MAX_LINE_LENGTH];
 int i=0;
 char dataLine[MAX_LINE_LENGTH];
 char line[MAX_LINE_LENGTH];

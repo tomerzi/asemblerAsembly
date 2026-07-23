@@ -1,7 +1,4 @@
- #include "seconedPass.h"
- char* colonPos;
- char arg1[MAX_LINE_LENGTH];
- char arg2[MAX_LINE_LENGTH];
+#include "seconedPass.h"
 
 BinaryLines* AllBinary(FILE* noEntryExtern,BinaryLines* combined_binary,LabelList* label_index){
 	rewind(noEntryExtern);

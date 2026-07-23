@@ -34,7 +34,7 @@ typedef struct LabelList {
 
 
 
-char am_file[MAX_LINE_LENGTH];
+extern char am_file[MAX_LINE_LENGTH];
 extern int i;
 extern char dataLine[MAX_LINE_LENGTH];
 extern char line[MAX_LINE_LENGTH];

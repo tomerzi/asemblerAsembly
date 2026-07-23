@@ -1,6 +1,12 @@
 #include "share.h"
 #include "erros.h"
 int line_idx;
+char err_buf[MAX_LINE_LENGTH];
+labels* listOfLabels = NULL;
+labels* listOfExtern = NULL;
+labels* listOfEntry  = NULL;
+int flag = 0;
+int vars = 0;
 char new_line[MAX_LINE_LENGTH];
 int error_printed;
 int AddLabel(labels** head, const char* name) { /* Check if a label with the same name already exists*/
@@ -217,7 +223,7 @@ int CountTwoWords(FILE*  output_am,const char* validWordsNeedTwo[],int size){
 		colonPos = strstr(line, COLON);
 	 	if (colonPos != NULL) /* If label-there is : */	
 	 		memmove(new_line, colonPos + 1, strlen(colonPos + 1) + 1);/*Take line to left*/
-		vars=sscanf(new_line, "%s%s%s%s",oprand,arg1,arg2,error);
+		vars=sscanf(new_line, "%s%s%s%s",oprand,arg1,arg2,err_buf);
 		for ( i = 0; i <size; i++) {/*If oprand is need 2 arguemnts */
 		if (strcmp(oprand, validWordsNeedTwo[i]) == 0) 
 				{
@@ -278,7 +284,7 @@ int CountZeroWord(FILE* output_am,const char* vaildWordsNeedZero[],int size){
 	 	if (colonPos != NULL){ /* If label-there is : */		
 			memmove(new_line, colonPos + 1, strlen(colonPos + 1) + 1);/*Take line to left*/
 		}
-		int vars=sscanf(new_line, "%s%s", oprand,error);
+		int vars=sscanf(new_line, "%s%s", oprand,err_buf);
 		 for ( i = 0; i <size; i++) {/*If oprand is need 0 arguemnts */
 	       		 if (strcmp(oprand, vaildWordsNeedZero[i]) == 0)
 	       		 	flag=1;

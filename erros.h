@@ -4,13 +4,13 @@ typedef struct labels {
     struct labels* next;
 } labels;
 extern int line_idx;
-extern  char newLine[MAX_LINE_LENGTH];
-char error[MAX_LINE_LENGTH];
-labels* listOfLabels;
-labels* listOfExtern;
- labels* listOfEntry;
- int flag;
- int vars;
+extern char newLine[MAX_LINE_LENGTH];
+extern char err_buf[MAX_LINE_LENGTH];
+extern labels* listOfLabels;
+extern labels* listOfExtern;
+extern labels* listOfEntry;
+extern int flag;
+extern int vars;
  /*AddLabel: This function attempts to add a label to a linked list, checking for duplicates and handling errors appropriately.
 
 VaildStringData: It looks like this function is intended to validate a specific line format within a file, likely within an assembly file. It processes lines with specific operations and checks their validity, printing errors when something is incorrect.
